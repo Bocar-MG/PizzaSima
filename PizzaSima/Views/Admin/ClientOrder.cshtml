@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PizzaOrder>
+
+
+
+<h2 class="text-light">Administration PizzaSima</h2>
+
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom Client</th>
+            <th scope="col">Adresse </th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Numero Pizza</th>
+            <th scope="col">Nom du Pizza</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pizzaOrder in Model)
+        {
+            <tr>
+
+                <td>@pizzaOrder.Id</td>
+                <td>@pizzaOrder.NomClient</td>
+                <td>@pizzaOrder.Adresse</td>
+                <td>@pizzaOrder.Telephone</td>
+                <td>@pizzaOrder.NumeroPizza</td>
+                <td>@pizzaOrder.NomPizza</td>
+                <td>
+                   
+                    <a asp-action="DeletePizzaOrder" asp-controller="Admin" asp-route-id="@pizzaOrder.Id" class="btn btn-danger">Supprimer</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Pizza>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12" style="width: 100%; margin: auto;">
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-stretched" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/pizza1.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/pizza2.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/pizza3.jpg" class="d-block w-100 img-fluid" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <!---->
+        @foreach(var pizza in Model) 
+        {
+          <partial name="_AffichePizza" model="pizza"></partial>
+         
+        }
+        <!---->
+    </div>
+
+</div>

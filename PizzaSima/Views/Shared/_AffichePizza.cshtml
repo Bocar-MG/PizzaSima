@@ -1,0 +1,12 @@
+﻿@model Pizza
+
+<div class="col-3">
+    <div class="card" style="width: 20rem;">
+        <img src="@Url.Content("~/PizzaImages/" +@Model.ImageUrl)" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Nom</h5>
+            <p class="card-text">@Model.Description</p>
+            <a asp-controller="Home" asp-action="Detail" asp-route-id="@Model.Id" class="btn text-light" style="background-color:#0A1627;">Voir detail</a><h1 class="text-secondary">@Model.Prix DT</h1>
+        </div>
+    </div>
+</div>

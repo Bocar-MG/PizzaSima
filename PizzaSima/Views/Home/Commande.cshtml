@@ -1,0 +1,60 @@
+﻿@model PizzaOrder
+
+
+@{
+    ViewData["Title"] = "Commande Pizza";
+}
+
+<h2 class="text-light"> Saisissez vos information de commande </h2>
+@if(ViewBag.item != null)
+{
+
+    <h3 class="btn text-success " style="background-color:white">@ViewBag.item.Nom</h3>
+    <h3 class="btn text-danger" style="background-color:azure">@ViewBag.item.Prix DT</h3>
+
+}
+else
+{
+    <h3 class="text-light btn">@ViewBag.Item.Nom</h3>
+    <h3 class="btn text-light btn ">@ViewBag.Item.Prix</h3>
+}
+
+
+<div class="row">
+    <div class="col-6">
+<form method="post" asp-action="Commande" role="form"  class="w-50 text-light">
+            <input type="hidden" name="idPO"  />
+    <label asp-for="NomClient" class="col-form-label"></label>
+    <input asp-for="NomClient" class="form-control" placeholder="Votre Nom ici" />
+    <br />
+            <span asp-validation-for="NomClient" class="alert-danger"></span>
+
+    <br />
+    <br />
+
+            <label asp-for="Adresse" class="col-form-label"></label>
+            <input asp-for="Adresse" class="form-control" placeholder=" Votre Adresse">
+            <br />
+            <span asp-validation-for="Adresse" class="alert-danger"></span>
+
+    <br />
+    <br />
+
+            <label asp-for="Telephone" class="col-form-label"></label>
+            <input asp-for="Telephone" class="form-control" placeholder="Numero de telephone" />
+            <br />
+            <span asp-validation-for="Telephone" class="alert-danger"></span>
+
+    <br />
+    <br />
+
+    <button type="submit" class="btn text-light" style="background-color:#0A1627;">Valider Commande</button>
+
+    </form>
+    </div>
+
+    <div class="col-6">
+        <img src="~/pizzasima-logo.png" style="width:500px;" />
+    </div>
+
+</div>

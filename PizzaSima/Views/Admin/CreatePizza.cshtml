@@ -1,0 +1,49 @@
+﻿@model Pizza
+
+@{
+    ViewData["Title"] = "Administration";
+}
+
+<h2 class="text-light"> Ajouter une Pizza </h2>
+<form method="post" asp-action="CreatePizza" role="form" enctype="multipart/form-data" class="w-50">
+    <label asp-for="Nom" class="col-form-label"></label>
+    <input asp-for="Nom" class="form-control" placeholder="Nom du Pizza"/>
+
+    <br />
+
+    <label asp-for="Description" class="col-form-label"></label>
+    <textarea asp-for="Description" class="form-control" placeholder="Entrer la description">
+        </textarea>
+
+    <br />
+
+    <label asp-for="Ingredients" class="col-form-label"></label>
+    <input asp-for="Ingredients" class="form-control" placeholder="Entrer les ingredients" />
+
+    <br />
+
+    <label asp-for="Prix" class="col-form-label"></label>
+    <input asp-for="Prix" class="form-control" placeholder="Entrer le Prix" />
+
+
+    <br />
+
+    <label for="Image" class="col-form-label"> Télécharger une Image </label>
+    <input type="file" class="form-control"id="file" name="file" placeholder="uploader une image" />
+
+
+    <br />
+
+    <button type="submit" class="btn text-light" style="background-color:#0A1627;">Enregistrer</button>
+
+
+
+
+
+
+
+
+
+
+</form>
+

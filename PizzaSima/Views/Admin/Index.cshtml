@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Pizza>
+
+<h2 class="text-light">Administration PizzaSima</h2>
+<a asp-action="ClientOrder" asp-controller="Admin" class="btn text-success" style="background-color:azure;"> Voir Les Commande</a>
+<table class="table text-light">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            <th scope="col">Ingredients</th>
+            <th scope="col">ImageUrl</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var pizza in Model)
+        {
+        <tr>
+           
+            <td>@pizza.Id</td>
+            <td>@pizza.Nom</td>
+            <td>@pizza.Description</td>
+            <td>@pizza.Ingredients</td>
+            <td>@pizza.ImageUrl</td>
+            <td>@pizza.Prix</td>
+            <td><a asp-action="UpdatePizza" asp-controller="Admin" asp-route-id="@pizza.Id" class="btn btn-primary">Modifier</a>
+                <br>
+                <a asp-action="DeletePizza" asp-controller="Admin" asp-route-id="@pizza.Id"class="btn btn-danger">Supprimer</a>
+            </td>
+           
+        </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="CreatePizza" asp-controller="Admin" class="btn text-light" style="background-color:#0A1627;"> Ajouter une Pizza</a>
